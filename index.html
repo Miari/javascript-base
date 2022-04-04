@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <label for="vegetables">Choose a vegetable:</label>
+  <select name="vegetables" id="vegetables" onchange="(function(){
+    let priceOfVegetable = 0;
+    let nameOfVegetable = document.getElementById('vegetables').value;
+    switch(nameOfVegetable) {
+      case 'potato':
+      case 'carrot':
+        priceOfVegetable = 10;
+        break;
+      case 'brocolli':
+      case 'cabbage':
+      case 'asparagus':
+        priceOfVegetable = 15;
+        break;
+    }
+    document.getElementById('priceOfVegetable').innerHTML = priceOfVegetable;
+    })()">
+    <option value="potato">Potato</option>
+    <option value="carrot">Carrot</option>
+    <option value="brocolli">Brocolli</option>
+    <option value="cabbage">Cabbage</option>
+    <option value="asparagus">Assparagus</option>
+  </select>
+  <p>Your price: <span id='priceOfVegetable'></span></p>
+</body>
+
+</html>
